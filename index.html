@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>Toaster - Demo</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/app.css">
+    </head>
+    <body>
+
+        <div id="toaster"></div>
+
+        <!-- TODO: Faire la démonstration de la lib' -->
+
+        <script src="js/Toast.js"></script>
+        <script>
+
+            let toast = new Toast('Success', Toast.success)
+            let toast2 = new Toast('Error', Toast.error)
+
+            toast.raise()
+
+            setTimeout(function() {
+                toast2.raise()
+            }, 500)
+
+        </script>
+
+    </body>
+</html>
