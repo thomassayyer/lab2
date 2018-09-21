@@ -9,21 +9,22 @@
     </head>
     <body>
 
-        <div id="toaster"></div>
+        <div id="notifications"></div>
 
         <!-- TODO: Faire la démonstration de la lib' -->
 
         <script src="js/Toast.js"></script>
         <script>
 
-            let toast = new Toast('Success', Toast.success)
-            let toast2 = new Toast('Error', Toast.error)
+            Toast.container = document.getElementById('notifications')
+
+            let toast = new Toast('Test', Toast.info)
+            let toast1 = new Toast('Test', Toast.success)
+            let toast2 = new Toast('Test', Toast.error)
 
             toast.raise()
-
-            setTimeout(function() {
-                toast2.raise()
-            }, 500)
+            setTimeout(function() { toast1.raise() }, 1000)
+            setTimeout(function() { toast2.raise() }, 2000)
 
         </script>
 

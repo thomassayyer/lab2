@@ -1,1 +1,36 @@
-/* TODO: Faire le style des toasts */
+
+#notifications {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.toast {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: solid black 1px;
+}
+
+.toast-success {
+    border-color: green;
+    color: green;
+}
+
+.toast-info {
+    border-color: blue;
+    color: blue;
+}
+
+.toast-error {
+    border-color: red;
+    color: red;
+}
+
+.toast .left {
+    font-weight: bold;
+}
+
+.toast .left, .toast .message {
+    display: inline;
+    margin: 0 5px;
+}

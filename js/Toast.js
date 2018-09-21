@@ -1,14 +1,16 @@
-export default class Toast {
+let container = null
 
-    static container = 'toaster'
-    static success = 0
-    static info = 1
-    static error = 2
+class Toast {
 
     constructor(message, status) {
         this.message = message
         this.status = status
     }
+
+    static set container(value) { container = value }
+    static get success() { return 0 }
+    static get info() { return 1 }
+    static get error() { return 2 }
 
     raise() {
         let toast = document.createElement('div')
@@ -21,15 +23,15 @@ export default class Toast {
         message.appendChild(document.createTextNode(this.message))
 
         switch (this.status) {
-            case success:
+            case Toast.success:
                 toast.className += ' toast-success'
                 icon.className = 'far fa-check-circle'
                 break
-            case info:
+            case Toast.info:
                 toast.className += ' toast-info'
                 icon.className = 'fas fa-info-circle'
                 break
-            case error:
+            case Toast.error:
                 toast.className += ' toast-error'
                 icon.className = 'far fa-times-circle'
                 break
@@ -39,9 +41,9 @@ export default class Toast {
         toast.appendChild(left)
         toast.appendChild(message)
         
-        document.getElementById(container).appendChild(toast)
+        container.appendChild(toast)
         
-        setTimeout(function() { toast.remove() }, 1000)
+        setTimeout(function() { toast.remove() }, 3000)
     }
 
 }
