@@ -1,6 +1,6 @@
 let container = null
 
-class Toast {
+export class Toast {
 
     constructor(message, status) {
         this.message = message
@@ -46,4 +46,16 @@ class Toast {
         setTimeout(function() { toast.remove() }, 3000)
     }
 
-}
+};
+
+export function notif(typeNotif) {
+    var text = document.getElementById('text').value;
+    Toast.container = document.getElementById('notifications');
+    if (typeNotif == 1)
+        var toast = new Toast(text, Toast.error);
+    if (typeNotif == 2)
+        var toast = new Toast(text, Toast.succes);
+    if (typeNotif == 3)
+        var toast = new Toast(text, Toast.info);
+    toast.raise();
+ };
